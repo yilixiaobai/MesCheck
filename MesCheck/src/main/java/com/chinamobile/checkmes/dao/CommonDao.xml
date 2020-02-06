@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chinamobile.checkmes.dao.CommonDao">
+    <insert id="addVerCode"  parameterType="com.chinamobile.checkmes.po.LoginPo">
+        insert into user_login(phone,verCode,date,count,verCodeTime) values(#{phone},#{verCode},#{date},#{count},#{verCodeTime})
+    </insert>
+    <insert id="addLogin"  parameterType="com.chinamobile.checkmes.po.LoginPo">
+        insert into user_login(phone,ip,date,count) values(#{phone},#{ip},#{date},#{count})
+    </insert>
+    <insert id="addLogin2"  parameterType="com.chinamobile.checkmes.po.LoginPo">
+        insert into user_login(comPhone,ip,date,count) values(#{comPhone},#{ip},#{date},#{count})
+    </insert>
+    <select id="checkDate"  parameterType="com.chinamobile.checkmes.po.LoginPo" resultType="com.chinamobile.checkmes.view.LoginView">
+       select  date,count from user_login where phone=#{phone}
+    </select>
+    <select id="checkDate2"  parameterType="com.chinamobile.checkmes.po.LoginPo" resultType="com.chinamobile.checkmes.view.LoginView">
+       select  date,count from user_login where comPhone=#{comPhone}
+    </select>
+    <update id="updateCount" parameterType="com.chinamobile.checkmes.po.LoginPo">
+        update user_login set count=count+1 where  phone=#{phone}
+    </update>
+    <update id="updateDate" parameterType="com.chinamobile.checkmes.po.LoginPo">
+        update user_login set count=#{count},date=#{date},ip=#{ip} where  phone=#{phone}
+    </update>
+    <update id="updateCount2" parameterType="com.chinamobile.checkmes.po.LoginPo">
+        update user_login set count=count+1 where  comPhone=#{comPhone}
+    </update>
+    <update id="updateDate2" parameterType="com.chinamobile.checkmes.po.LoginPo">
+        update user_login set count=#{count},date=#{date},ip=#{ip} where comPhone=#{comPhone}
+    </update>
+    <select id="findById"  parameterType="java.lang.Integer" resultType="com.chinamobile.checkmes.view.SecretView">
+        select * from sys_secret where secretID=#{id}
+    </select>
+    <update id="updateSecret" parameterType="com.chinamobile.checkmes.view.SecretView">
+        update sys_secret set secret=#{secret} where  secretID=#{secretID}
+    </update>
+    <select id="loginCompany"  parameterType="java.lang.String" resultType="com.chinamobile.checkmes.po.companyPo">
+        select * from sys_company where phone=#{phone}
+    </select>
+    <select id="loginCompany2"  parameterType="java.lang.String" resultType="com.chinamobile.checkmes.po.companyPo">
+        select * from sys_company where cpName=#{cpName}
+    </select>
+    <update id="updateVerCode" parameterType="com.chinamobile.checkmes.po.LoginPo">
+        update user_login set verCode=#{verCode} ,verCodeTime=#{verCodeTime} where  phone=#{phone}
+    </update>
+    <select id="find" parameterType="com.chinamobile.checkmes.po.LoginPo"  resultType="com.chinamobile.checkmes.view.LoginView">
+      select  verCode,verCodeTime from user_login where phone=#{phone}
+    </select>
+    <update id="updateCom"  parameterType="com.chinamobile.checkmes.po.companyPo">
+        update sys_company set phone=#{phone},status=#{status},adress=#{adress},name=#{name},cpName=#{cpName},password=#{password} where phone=#{phone}
+    </update>
+    <insert id="addCom"  parameterType="com.chinamobile.checkmes.po.companyPo">
+        insert into sys_company(status,adress,phone,name,cpName,password) values(#{status},#{adress},#{phone},#{name},#{cpName},#{password})
+    </insert>
+    <select id="findList"  resultType="com.chinamobile.checkmes.po.companyPo">
+        select comPanyID,cpName,phone,DATE_FORMAT(time,'%Y-%c-%d %H:%i:%s') as time,adress,status,name from sys_company order by status asc,companyID desc
+    </select>
+    <select id="findGl"  parameterType="java.lang.String" resultType="com.chinamobile.checkmes.po.glPo">
+        select * from sys_user_gl where userPhone=#{userPhone}
+    </select>
+    <update id="updateComOne"  parameterType="com.chinamobile.checkmes.po.companyPo">
+        update sys_company set status=#{status},time=#{time} where comPanyID=#{comPanyID}
+    </update>
+    <select id="findById2"   parameterType="java.lang.String" resultType="com.chinamobile.checkmes.po.companyPo">
+        select * from sys_company where comPanyID=#{comPanyID}
+    </select>
+    <update id="updateList"  parameterType="java.util.List">
+        update sys_company set status=1 ,time=now() where comPanyID
+        in
+        <foreach item= "item" index="list" collection="array" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        and status=0
+    </update>
+    <update id="updateList2"  parameterType="java.util.List">
+    update sys_company set status=2 ,time=now() where comPanyID
+    in
+    <foreach item= "item" index="list" collection="array" open="(" separator="," close=")">
+        #{item}
+    </foreach>
+    and status=0
+    </update>
+
+    <select id="checkcompback"  parameterType="com.chinamobile.checkmes.po.LoginPo" resultType="com.chinamobile.checkmes.view.LoginView">
+       SELECT verCode,verCodeTime,date,count FROM sys_back_password WHERE phone=#{phone}
+    </select>
+    <update id="updateComback"  parameterType="com.chinamobile.checkmes.po.LoginPo">
+        update sys_back_password set phone=#{phone},verCode=#{verCode},verCodeTime=#{verCodeTime},count=count+1 where phone=#{phone}
+    </update>
+    <update id="updateComback2"  parameterType="com.chinamobile.checkmes.po.LoginPo">
+        update sys_back_password set phone=#{phone},verCode=#{verCode},verCodeTime=#{verCodeTime},date=#{date},count=#{count} where phone=#{phone}
+    </update>
+    <insert id="addComback"  parameterType="com.chinamobile.checkmes.po.LoginPo">
+        INSERT INTO sys_back_password (phone,verCode,verCodeTime,date,count) VALUES(#{phone},#{verCode},#{verCodeTime},#{date},#{count})
+    </insert>
+
+    <select id="findcomback"  parameterType="com.chinamobile.checkmes.po.LoginPo" resultType="com.chinamobile.checkmes.po.LoginPo">
+       SELECT phone,verCode,verCodeTime,date,count FROM sys_back_password WHERE phone=#{phone}
+    </select>
+    <update id="editpass"  parameterType="com.chinamobile.checkmes.po.companyPo">
+        UPDATE sys_company SET `PASSWORD`=#{password} WHERE phone=#{phone}
+    </update>
+
+
+
+</mapper>

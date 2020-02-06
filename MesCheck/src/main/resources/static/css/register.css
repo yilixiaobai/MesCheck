@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+input {
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+textarea {
+    outline: none;
+}
+
+html, body {
+    color: #333;
+    font-family: Microsoft Yahei, Microsoft JhengHei, NSimSunm, SimSun;
+    background: #fff;
+}
+
+input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    font-size: 18px;
+}
+
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 18px;
+}
+
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 18px;
+}
+
+input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    font-size: 18px;
+}
+
+textarea::-webkit-input-placeholder {
+    /* WebKit browsers */
+    font-size: 18px;
+}
+
+textarea:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 18px;
+}
+
+textarea::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 18px;
+}
+
+textarea:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    font-size: 18px;
+}
+
+.main {
+    font-size: 18px;
+}
+
+.content {
+    width: 100%;
+    font-size: 18px;
+    color: #999;
+    box-sizing: border-box;
+}
+
+.logoBox {
+    margin-top: 0.8rem;
+    width: 100%;
+}
+
+.logoBox img {
+    width: 100%;
+}
+
+.inp {
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 0.106667rem;
+    padding: 8px;
+    width: 100%;
+}
+
+.registerBox {
+    margin-top: 30px;
+    padding: 10px;
+    background: #fff;
+}
+
+.inpbox {
+    position: relative;
+    margin-top: 20px;
+}
+
+.signInBox .signInBtn {
+    box-sizing: border-box;
+    display: block;
+    width: 80%;
+    border-radius: 4px;
+    background: #0083ce;
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    margin: 20px auto;
+}
+
+.logout {
+    position: absolute;
+    right: 12px;
+    top: 64px;
+    /*transform:translateY(-50%);*/
+    padding: 4px 6px;
+    font-size: 16px;
+    border-radius: 4px;
+    color: #fff;
+    background: #0083ce;
+}
+
+/* .titleBox{
+	width:100%;
+	padding:0.266667rem 0.24rem;
+	position:fixed;
+	top:0;
+	left:0;
+	background:#fff;
+	box-sizing: border-box;
+}
+
+.titleBox p{
+	font-size:0.72rem;
+	text-align: center;
+	color:#666;
+	box-sizing: border-box;
+} */
+
+.logouts {
+    float: right;
+    margin-right: 5px;
+    padding: 2px 6px;
+    font-size: 18px;
+    border-radius: 4px;
+    color: #fff;
+    background: #0083ce;
+}
+
+.agreeall {
+    margin: 6px 0;
+    background: #0083ce;
+}
+
+.refuseall {
+    background: #d9534f;
+}
+
+.editbtns {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-left: 6px;
+    color: #fff;
+}
+
+.logoBoxs img {
+    width: 100%;
+}
+
+.checkallbox {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    line-height: 26px;
+}
+
+#checkall {}
+
+table {
+    border-collapse: collapse;
+    margin-left: 50px;
+}
+
+tr {
+    position: relative;
+}
+
+table tr>td:first-child {
+    position: absolute;
+    width: 50px;
+    left: 0;
+    background:#fff;
+    z-index:99;
+}
+
+td {
+    border: 1px solid #999999;
+    padding: 4px;
+    text-align: center;
+}
+
+input[type=checkbox] {
+    width: 16px;
+    height: 16px;
+}
+
+.qyBox {
+    width: 100%;
+    padding: 20px 10px;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.qyList {
+    width: 200%;
+}
+
+/* MUI 表单元素样式 */
+
+.mui-input-group {
+    position: relative;
+    padding: 0;
+    border: 0;
+    background-color: #fff;
+}
+
+.mui-input-group:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+
+.mui-input-group:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+
+.mui-input-group .mui-input-row {
+    height: 40px;
+}
+
+.mui-input-row {
+    position: relative;
+}
+
+.mui-input-row {
+    clear: left;
+    overflow: hidden;
+}
+
+.mui-input-group input:last-child {
+    background-image: none;
+}
+
+.mui-input-group input, .mui-input-group textarea {
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.mui-input-row .mui-btn+input, .mui-input-row label+input, .mui-input-row:last-child {
+    background: 0 0;
+}
+
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+    line-height: 21px;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    -webkit-user-select: text;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    outline: 0;
+    background-color: #fff;
+    -webkit-appearance: none;
+}
+
+input, select, textarea {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 17px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+    font: inherit;
+    margin: 0;
+    color: inherit;
+}
+
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea {
+    float: right;
+    width: 72%;
+    margin-bottom: 0;
+    padding-left: 0;
+    border: 0;
+}
+
+.mui-input-row label {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 1.1;
+    float: left;
+    width: 28%;
+    padding: 11px 15px;
+    box-sizing: border-box;
+}
+
+.mui-input-group .mui-input-row:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 15px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}

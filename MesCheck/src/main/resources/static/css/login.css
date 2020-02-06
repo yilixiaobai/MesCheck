@@ -1,0 +1,153 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+input {
+	display: block;
+	box-sizing: border-box;
+	font-size:18px;
+}
+
+html, body {
+	color: #333;
+	font-family: Microsoft Yahei, Microsoft JhengHei, NSimSunm, SimSun;
+	background: #fff;
+}
+
+.main {
+	font-size: 18px;
+}
+
+.logoBox {
+	margin-top: 30px;
+	width: 100%;
+}
+
+.logoBox img {
+	width: 100%;
+}
+
+.logoBox p {
+	text-align: center;
+	font-size: 32px;
+	margin: 16px;
+}
+
+.tabBox {
+	box-sizing: border-box;
+	padding: 10px;
+	width: 100%;
+}
+
+.tabMeun {
+	display: flex;
+	justify-content: space-between;
+	border-radius: 4px;
+	border: 1px solid #6a83f2;
+}
+
+.tabMeun a {
+	text-align: center;
+	display: block;
+	box-sizing: border-box;
+	width: 50%;
+	padding: 5px;
+}
+
+.tabMeun>a.action {
+	background: #6a83f2;
+	color: #fff;
+}
+
+.loginBox {
+	padding:10px;
+	background: #fff;
+}
+
+#userTel, #passwords {
+	border: 1px solid #ccc;
+	background: #fff;
+	border-radius: 4px;
+	padding: 8px 32px;
+	width: 100%;
+}
+
+#username, #password {
+	border: 1px solid #ccc;
+	background: #fff;
+	border-radius: 4px;
+	padding: 8px 32px;
+	width: 100%;
+}
+
+.usernameBox {
+	position: relative;
+}
+
+.usernameBox .icons {
+	position: absolute;
+	left: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 22px;
+	color: #999;
+}
+
+.passwordBox {
+	margin-top: 20px;
+	position: relative;
+}
+
+.passwordBox .icons {
+	position: absolute;
+	left: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px;
+	color: #999;
+}
+
+.getPasswordBtn {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 40%;
+	border-left: 1px solid #ccc;
+}
+
+.passwordBtnText {
+	display: block;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.signInBox {
+	margin-top: 20px;
+}
+
+.signInBox .signInBtn {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	border-radius: 4px;
+	background: #0083ce;
+	padding: 5px;
+	text-align: center;
+	color: #fff;
+}
